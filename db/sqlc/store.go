@@ -27,3 +27,5 @@ func NewStore(connPool *pgxpool.Pool) Store {
 		Queries:  New(connPool),
 	}
 }
+
+var _ Store = (*SQLStore)(nil)
