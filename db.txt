@@ -8,4 +8,22 @@
 
 --- DB Migration (golang-migrate)
     brew install golang-migrate
-    
+    - create Migration
+        migrate create -ext sql -dir db/migration -seq init_schema(created 2 up and down migration files)
+    - docker create db in container sh
+        - docker exec -it postgres17 / bin/sh
+        createdb --username=root --owner=root simple_bank
+        psql simple_bank(inside db)
+        \q - quit
+        dropdb simple_bank (deletes created db)
+
+-- Create db wihtout going into contianer shell
+    docker exec -it postgres17 createdb --username=root --owner=root simple_bank
+    docker exec -it postgres17  psql -U root simple_bank (access it wihtout container shell)
+
+---Create db using docker and migration file 
+    make postgres (starts postgres container)
+    make createdb (make simple_bank database)
+    connect container to table plus and select the created empty database
+    migrate -path db/mgration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+    add migrateup and migratedown commands to makefile and use those to migrate
