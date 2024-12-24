@@ -5,4 +5,7 @@
         \q -> exit/quit exec
     docker logs postgres17
     use sql code from dbdiagram.io in tableplus to form those tables in db started by docker
+
+--- DB Migration (golang-migrate)
+    brew install golang-migrate
     
