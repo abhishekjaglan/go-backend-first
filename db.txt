@@ -33,4 +33,8 @@
     sqlc init(to initialize sqlc)
     configure sqlc.yml file
     make sqlc (runs the queries and generates the results){generates sqlc files for the corresponding query and db}
-    
+    write the queries required and run generate/make sqlc 
+
+---Testing CRUD 
+    lib/pq is required as database/sql is a general interface
+    command to run the test file - go test ./db/sqlc/
