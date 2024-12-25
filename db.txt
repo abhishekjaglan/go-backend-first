@@ -27,3 +27,6 @@
     connect container to table plus and select the created empty database
     migrate -path db/mgration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
     add migrateup and migratedown commands to makefile and use those to migrate
+
+---CRUD code using sqlc (not sql/db package as its verbose and errors caught only as runtime, not gorm as it is slow and you need to use its native funcs only, not sqlx as its error is caught at runtime as well)
+    sqlc - genenrates code for given sql structure(brew install kyleconroy/sqlc/sqlc)
