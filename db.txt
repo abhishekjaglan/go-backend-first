@@ -38,3 +38,5 @@
 ---Testing CRUD 
     lib/pq is required as database/sql is a general interface
     command to run the test file - go test ./db/sqlc/
+    testify package to check errors in returned obj/struct rather than if else
+    Testing in build package is used to test as well
