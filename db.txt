@@ -30,3 +30,7 @@
 
 ---CRUD code using sqlc (not sql/db package as its verbose and errors caught only as runtime, not gorm as it is slow and you need to use its native funcs only, not sqlx as its error is caught at runtime as well)
     sqlc - genenrates code for given sql structure(brew install kyleconroy/sqlc/sqlc)
+    sqlc init(to initialize sqlc)
+    configure sqlc.yml file
+    make sqlc (runs the queries and generates the results){generates sqlc files for the corresponding query and db}
+    
