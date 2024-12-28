@@ -11,10 +11,10 @@ INSERT INTO accounts (
 SELECT * FROM accounts
 WHERE id = $1 LIMIT 1;
 
--- name: GetAccountForUpdate :one
-SELECT * FROM accounts
-WHERE id = $1 LIMIT 1
-FOR UPDATE;
+-- -- name: GetAccountForUpdate :one
+-- SELECT * FROM accounts
+-- WHERE id = $1 LIMIT 1
+-- FOR UPDATE;
 
 -- name: ListAccounts :many
 SELECT * FROM accounts
@@ -33,10 +33,10 @@ DELETE FROM accounts
 WHERE id = $1
 RETURNING *;
 
--- -- name: GetAccountForUpdate :one
--- SELECT * FROM accounts
--- WHERE id = $1 LIMIT 1
--- FOR NO KEY UPDATE;
+-- name: GetAccountForUpdate :one
+SELECT * FROM accounts
+WHERE id = $1 LIMIT 1
+FOR NO KEY UPDATE;
 
 -- name: AddAccountBalance :one
 UPDATE accounts
