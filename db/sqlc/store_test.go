@@ -36,9 +36,6 @@ func TestTransferTx(t *testing.T) {
 		}()
 	}
 
-	// close(results)
-	// close(errs)
-
 	// check results
 	existed := make(map[int]bool)
 	for i := 0; i < n; i++ {
@@ -107,6 +104,9 @@ func TestTransferTx(t *testing.T) {
 		require.NotContains(t, existed, k)
 		existed[k] = true
 	}
+
+	close(results)
+	close(errs)
 
 	// // check the final updated balance
 	updatedAccount1, err := store.GetAccount(context.Background(), account1.ID)
